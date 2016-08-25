@@ -22,7 +22,14 @@ Usage:
         # Create thread pool with nums threads
         pool = ThreadPool(nums)
         # Add a task into pool
-        pool.add_task(do_work, args, kwds)
+        pool.add_task(task_name, do_work, args, kwds)
+
+        # Get result from result pool
+        result = pool.get_task_result(task_name)
+        
+        # Get all results from result pool
+        results = pool.get_all_task_result(task_name)
+        
         # Join and destroy all threads
         pool.destroy()
     
